@@ -1,9 +1,24 @@
 (function () {
 
-    var gw = new getWeather();
+  var gw = new GetWeather()
 
+   getWeatherData = (zipcode) => {
+      console.log(zipcode)
+      gw.getCity(zipcode)
+       
+      .then((data, err) => {
+        console.log('here')
+          return gw.getWeather(data)
+      })
+      .then(function (data, err) {
+        console.log(data)
 
-    new Vue({
+      })
+      .catch(function (error) { console.log('Error!')
+    })
+  }
+
+ new Vue({
         el: '#vue-flix',
         data: function () {
             return {
@@ -17,7 +32,8 @@
         },
         methods: {
             search: function () {
-                details = gw.getWeatherData(this.query)
+                details = gw.getCity(this.query)
+                return
             },
 
             setMovies: function (movies) {
@@ -26,7 +42,7 @@
             reset: function () {
                 this.query = ''
                 this.category = '',
-                this.movies = [],
+                this.movies = [],changes
                 this.myMovies = []
             },
             setDetails: function (movie) {
@@ -97,3 +113,8 @@
 // name: "Garden City",
 // cod: 200
 // }
+ 
+
+
+
+

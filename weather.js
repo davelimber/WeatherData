@@ -1,36 +1,17 @@
 
+function GetWeather(){
 
-function getWeather() {
-
-    this.getWeatherData = (zipcode) => {
-      console.log(zipcode)
-      getCity(83704)
-       
-      .then((data, err) => {
-        console.log('here')
-          return getWeather(data)
-      })
-      .then(function (data, err) {
-        console.log(data)
-
-      })
-      .catch(function (error) { console.log('Efsdfr!')
-    })
-  }
-  
-
-
-    function getCity(zip) {
-
+    this.getCity = function getCity(zip) {
         var urlBase = 'http://api.zippopotam.us/us/';
         var url = urlBase + zip;
+console.log('at get weather')
 
         return new Promise(function (resolve, reject) {
 
             $.get(url).then(
                 function (data) {
                     resolve(data);
-                    // console.log(data)
+                    console.log(data)
                 },
                 function (error) {
                     reject(error);
@@ -40,7 +21,7 @@ function getWeather() {
         });
     }
 
-    function getWeather(cityData) {
+    this.getWeather = function getWeather(cityData) {
         console.log("step 1")
         var zip = cityData['post code'];
         var urlBase = 'http://api.openweathermap.org/data/2.5/';
