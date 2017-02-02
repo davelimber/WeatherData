@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="grid.css">
+</head>
+
+<body>
+    <div id="vue-flix">
+        <div class="container">
+            <form @submit.prevent="search">
+                <input type="text" v-model="query" />
+                <button type="submit">ZipCode</button>
+            </form>
+        </div>
+        <div class="panel-body">
+            <div v-if="details">
+              <!--<img :src="details.poster" width="100">-->
+              <!--<h3>{{details.country}}</h3>-->
+              <p>
+                <b>Country:</b> {{details.country}},
+                <!--<b>Runtime:</b> {{details.runtime}},
+              </p>
+              <p>
+                <b>Ratings:</b> {{details.rating}},
+                <b>Released:</b> {{details.release_year}},
+                <b>Category:</b> {{details.category}}
+              </p>
+              <p>
+                <b>Summary:</b> {{details.summary}}
+              </p>
+              <p>
+                <b>Cast:</b> {{details.show_cast}}-->
+              </p>
+               
+              <button @click="clearDetails">BACK</button>
+            </div>
+    </div>
+
+    <!--LOAD LIBRARIES-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+
+    <!--SERVICES-->
+    <script src="main.js"></script>
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+
+</body>
+
+</html>
