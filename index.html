@@ -19,9 +19,9 @@
         <div class="panel-body">
             <div v-if="details">
               <!--<img :src="details.poster" width="100">-->
-              <h3>{{details.country}}</h3>
+              <h3>{{ query }}</h3>
               <p>
-                <b>Country:</b> {{details.country}}
+                <b>City:</b> {{ details }}
                 <!--<b>Runtime:</b> {{details.runtime}},-->
               <!--</p>
               <p>
@@ -38,13 +38,13 @@
                
               <button @click="clearDetails">BACK</button>
             </div>
-    </div>-->
+    </div>
 
     <!--LOAD LIBRARIES-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
 
     <!--SERVICES-->
-    <script src="weather.js"></script>
+    <script src="weatherservice.js"></script>
     <script src="main.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 

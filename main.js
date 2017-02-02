@@ -1,6 +1,6 @@
 (function () {
 
-  var gw = new GetWeather()
+  var gw = new WeatherService()
 
    getWeatherData = (zipcode) => {
       console.log(zipcode)
@@ -32,7 +32,9 @@
         },
         methods: {
             search: function () {
-                details = gw.getCity(this.query)
+                var x = gw.getCity(this.query)
+                this.details = x
+                console.log (x)
                 return
             },
 
